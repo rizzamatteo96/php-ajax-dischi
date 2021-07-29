@@ -3,8 +3,7 @@ Ci sono diverse domande con relative risposte.
 Gestire il “Database” e la visualizzazione di queste domande e risposte con PHP. -->
 
 <?php 
-  require 'dbDischi.php';
-
+  require __DIR__ . '/db/dbDischi.php';
 ?>
 
 <!DOCTYPE html>

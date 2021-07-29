@@ -8,6 +8,16 @@ body{
   background-color: rgb(29, 29, 29) !important;
 }
 
+header{
+  background-color: black;
+  height: 100px;
+}
+
+main{
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
 p{
   margin-bottom: 0 !important;
 }
