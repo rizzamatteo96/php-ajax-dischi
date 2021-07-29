@@ -39,7 +39,8 @@ Gestire il “Database” e la visualizzazione di queste domande e risposte con 
     <!-- inizio header -->
     <header>
       <div class="container d-flex justify-content-end align-items-center h-100">
-        <select name="genre" id="genre" class="p-2" @change="filterGenre(this.value)">
+        <select name="genre" id="genre" class="p-2" @change="filterGenre" v-model="selGenre">
+          <option value=""> Seleziona un genere... </option>
           <option v-for="genre in arrayGenres" :value="genre"> {{genre}} </option>
         </select>
       </div>
@@ -50,7 +51,7 @@ Gestire il “Database” e la visualizzazione di queste domande e risposte con 
     <main>
       <div class="container mt-5">
         <div class="row row-cols-5 g-3">
-          <div v-for="disco in arrayDischi" class="col">
+          <div v-for="disco in arrayFiltered" class="col">
             <div class="card bg-secondary text-white h-100">
               <img :src="disco.poster" class="card-img-top" :alt="disco.title">
               <div class="card-body">
