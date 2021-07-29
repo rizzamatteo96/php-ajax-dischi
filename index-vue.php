@@ -39,8 +39,8 @@ Gestire il “Database” e la visualizzazione di queste domande e risposte con 
     <!-- inizio header -->
     <header>
       <div class="container d-flex justify-content-end align-items-center h-100">
-        <select name="cars" id="cars" class="p-2">
-          <option value="volvo">Volvo</option>
+        <select name="genre" id="genre" class="p-2" @change="filterGenre(this.value)">
+          <option v-for="genre in arrayGenres" :value="genre"> {{genre}} </option>
         </select>
       </div>
     </header>
