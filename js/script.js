@@ -15,7 +15,7 @@ const app = new Vue({
         this.arrayFiltered = response.data;
       })
       .catch(error => console.log(error))
-      .finally(() =>{
+      .finally(() => {
         // quando la api si è caricata creo l'array di generi a seconda di quali sono presenti nell'api
         this.arrayDischi.forEach(disco => {
           if(!this.arrayGenres.includes(disco.genre)){
@@ -26,8 +26,7 @@ const app = new Vue({
   },
   methods:{
     filterGenre(){
-      console.log(this.selGenre);
-      
+      // se il valore filtrato è uno dei generi in lista allora filtra la lista altrimenti mostra tutti i dischi
       if(this.selGenre){
         this.arrayFiltered = [];
         this.arrayFiltered = this.arrayDischi.filter((disco) => {
@@ -37,8 +36,6 @@ const app = new Vue({
       else {
         this.arrayFiltered = this.arrayDischi;
       }
-
-      console.log(this.arrayFiltered);
     }
   }
 });
